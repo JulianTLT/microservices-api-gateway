@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-gateway
+  labels:
+    service: api-gateway
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: api-gateway
+  template:
+    metadata:
+      labels:
+        service: api-gateway
+    spec:
+      containers:
+      - name: microservice-api-gateway
+        image: sjulian/microservice-api-gateway:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always
