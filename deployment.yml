@@ -19,5 +19,5 @@ spec:
         image: sjulian/microservice-api-gateway:latest
         imagePullPolicy: Always
         ports:
-        - containerPort: 8080
+        - containerPort: 80
       restartPolicy: Always
