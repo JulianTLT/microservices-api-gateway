@@ -18,6 +18,13 @@ spec:
       - name: microservice-api-gateway
         image: sjulian/microservice-api-gateway:latest
         imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "500m"
+          limits:
+            memory: "1024Mi"
+            cpu: "1000m"
         ports:
         - containerPort: 80
       restartPolicy: Always
